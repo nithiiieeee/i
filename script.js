@@ -1,130 +1,41 @@
-        // WHyyy here bud... Whyyyy ? 🙄
+<html>
+    <head>
+        <title>Nithin Das</title>
+    </head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <link href="styles.css" rel="stylesheet">
+    <body>
+        <h2 class="heading">&nbsp;Nithin das</h2>
+        <p><u>Personal Portfolio</u></p>
+        <hr>
+        <p>Table of contents</p>
+        <a href="#about-me">about me</a>
+        <br>
+        <a href="#works">my works</a>
+        <br><br>
+        <hr>
+        <div id="about-me">
+            <h3 class="heading">&nbsp;About Me</h3>
+            <p>well,<span class="select"> i am nithin</span>. someone who tries/does new stuffs when bored.i am<span class="select"> kinda at the perfect age</span> wanting to increase the quality of present and future. not too early, not too late.<span class="select"> right now</span>. and here, i am going to be blabbering about myself. i am a <a href="https://en.wikipedia.org/wiki/Chartered_accountant_(India)">CA</a> <a href="https://en.wikipedia.org/wiki/CA_Foundation_Course">foundation</a> <span class="select">student</span> with a little bit of curiosity and enthusiasm. i watch anime, movies, series, i code, i play chess, i capture, edit, i like the wind, the sunlight (not the 2pm one), the ocean, the rain, and some music. i also like to read story books from time to time. my <span class="select">aim</span> is<span class="select"> to be strong </span>and smart so that wherever you go, you can be in control if you want/need to. and so that you can <span class="select">protect your loved ones</span> ;). and i love enjoying the beauty of this nature and beings. </p>
+        </div>
+        <br><br>
+        <hr>
+        <div id="works">
+            <h3 class="heading">&nbsp;My Works</h3>
+            <p>so as i said, here are some of the things i made when i was bored.</p>
+            <p class="disclaimer">Disclaimer: some websites were made with the help of ai (due to my lack of skill). so don't judge my skill(s) based on these</p>
+        </div>
         
-        // Sections data
-const sections = [
-  { 
-    title: "My Works", 
-    type: "square", 
-    items: [
-      { 
-        name: "Thief & Police", 
-        subtitle: "The childhood classic", 
-        url: "https://nithindask.github.io/tnp",
-        image: "tnp.png"
-      }
-    ]
-  },
-  {
-    title: "About Me", 
-    type: "square", 
-    items: [
-      { 
-        name: "Introduction", 
-        subtitle: "Let me Introduce...", 
-        content: "With over 15 years of experience in living, I specialise in not giving a f▒▒ about what others think while also considering useful opinions.<br><br>I blend aesthetic sensitivity with rigorous logic. I grew up moving from a quiet village to a busy town. Now I live surrounded by traffic and noise, but still notice the trees, the sunlight, the air, the birds, etc... <br><br>I spend most days with my family, doing a little bit of everything—chess, design, coding, cubes. Most of the time, I do nothing.", 
-        image: "https://yt3.googleusercontent.com/JDPwhh73GWjQDySQyOGgbF6xof2nf_5zJ3_djjI-kqcuqUiznHCElC5uB5l8xzvJg_u_QIWi=s900-c-k-c0x00ffffff-no-rj" 
-      },
-      { 
-        name: "Hobbies", 
-        subtitle: "What I do...", 
-        content: "Look back at the beginning of this website ⇀⁠‸⁠↼⁠", 
-        image: "https://static.vecteezy.com/system/resources/previews/019/514/242/non_2x/confused-tom-cartoon-expression-free-vector.jpg" 
-      },
-      { 
-        name: "Location", 
-        subtitle: "Where I live...", 
-        content: "Creep 😳", 
-        image: "https://s2.dmcdn.net/u/5gEFn1PRT9GVzoOoJ/240x240",
-        overlayImage : "https://images.plex.tv/photo?size=large-1920&scale=1&url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2FwNKZnOdxY8bmTU4Asp2AhLyYjsv.jpg"
-      }
-    ]
-  }
-];
+        <br><br>
+        <div class="footer">
+            <p> that's it :) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://instagram.com/nithiiieeee">insta</a>&nbsp;&nbsp;<a href="https://github.com/nithiiieeee">github</a></p>
+        </div>
 
-function seedImg(seed, ratio) {
-  const base = `https://picsum.photos/seed/${seed}/`;
-  return ratio === "tall" ? base + "240/360" : base + "300/300";
-}
+        <script src="script.js"></script>
 
-const overlay = document.createElement("div");
-overlay.className = "overlay";
-overlay.innerHTML = `
-  <button class="overlay-close">&times;</button>
-  <div class="overlay-thumb"></div>
-  <div class="overlay-title"></div>
-  <div class="overlay-subtitle"></div>
-  <div class="overlay-content"></div>
-`;
-document.body.appendChild(overlay);
-
-const overlayCloseBtn = overlay.querySelector(".overlay-close");
-const overlayThumb = overlay.querySelector(".overlay-thumb");
-const overlayTitle = overlay.querySelector(".overlay-title");
-const overlaySubtitle = overlay.querySelector(".overlay-subtitle");
-const overlayContent = overlay.querySelector(".overlay-content");
-
-overlayCloseBtn.addEventListener("click", () => {
-  overlay.classList.remove("open");
-});
-
-function makeSection({ title: label, type, items }) {
-  const section = document.createElement("section");
-  section.className = "section";
-  section.innerHTML = `<h3>${label}</h3><div class="row"></div>`;
-  const row = section.querySelector(".row");
-
-  items.forEach((item) => {
-    const isTall = type === "tall";
-    const isAbout = label === "About Me";
-
-    const card = document.createElement(isAbout ? "div" : "a");
-    if (!isAbout) {
-      card.href = item.url;
-      card.target = "_blank";
-      card.rel = "noopener noreferrer";
-    }
-    card.className = `card ${isTall ? "tall" : ""} relative`;
-
-    const pic = item.image || seedImg(item.seed, isTall ? "tall" : "square");
-
-    card.innerHTML = `
-      <div class="thumb ${isTall ? "tall" : ""}" style="background-image:url('${pic}')"></div>
-      <div class="meta">
-        <p class="title">${item.name}</p>
-        <p class="subtitle">${item.subtitle}</p>
-      </div>
-    `;
-
-    if (isAbout) {
-      card.addEventListener("click", () => {
-        const overlayPic = item.overlayImage || pic;
-        overlayThumb.style.backgroundImage = `url('${overlayPic}')`;
-        overlayTitle.textContent = item.name;
-        overlaySubtitle.textContent = item.subtitle;
-        overlayContent.innerHTML = item.content || "No description available.";
-        overlay.classList.add("open");
-      });
-    }
-
-    row.appendChild(card);
-  });
-
-  return section;
-}
-
-const container = document.getElementById("content");
-sections.forEach((s) => container.appendChild(makeSection(s)));
-
-document.querySelectorAll(".chip").forEach((ch) => {
-  ch.addEventListener("click", () => {
-    document.querySelectorAll(".chip").forEach((c) => c.classList.remove("is-active"));
-    ch.classList.add("is-active");
-  });
-});
-
-        //Got anything huh !? 🧐
-
-
-        
-
-
+    </body>
+</html>
