@@ -1,42 +1,100 @@
-<html>
-    <head>
-        <title>Nithin Das</title>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nithin Das</title>
+<link href="styles.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+</head>
+<body>
+<main>
+  <header>
+    <div class="name">nithin.</div>
+    <div class="mode" id="mode">light</div>
+  </header>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <h1>
+    I like building<br>
+    quiet things<br>
+    on the internet.
+  </h1>
 
-    <link href="styles.css" rel="stylesheet">
-    <body>
-        <h2 class="heading">&nbsp;Nithin das</h2>
-        <p><u>Personal Portfolio</u></p>
-        <hr>
-        <p>Table of contents</p>
-        <a href="#about-me">about me</a>
-        <br>
-        <a href="#works">my works</a>
-        <br><br>
-        <hr>
-        <div id="about-me">
-            <h3 class="heading">&nbsp;About Me</h3>
-            <p>well,<span class="select"> i am nithin</span>. someone who tries/does new stuffs when bored.i am<span class="select"> kinda at the perfect age</span> wanting to increase the quality of present and future. not too early, not too late.<span class="select"> right now</span>. and here, i am going to be blabbering about myself. i am a <a href="https://en.wikipedia.org/wiki/Chartered_accountant_(India)">CA</a> <a href="https://en.wikipedia.org/wiki/CA_Foundation_Course">foundation</a> <span class="select">student</span> with a little bit of curiosity and enthusiasm. i watch anime, movies, series, i code, i play chess, i capture, edit, i like the wind, the sunlight (not the 2pm one), the ocean, the rain, and some music. i also like to read story books from time to time. my <span class="select">aim</span> is<span class="select"> to be strong </span>and smart so that wherever you go, you can be in control if you want/need to. and so that you can <span class="select">protect your loved ones</span> ;). and i love enjoying the beauty of this nature and beings. </p>
-        </div>
-        <br><br>
-        <hr>
-        <div id="works">
-            <h3 class="heading">&nbsp;My Works</h3>
-            <p>so as i said, here are some of the things i made when i was bored.</p>
-            <p class="disclaimer">Disclaimer: some websites were made with the help of ai (due to my lack of skill). so don't judge my skill(s) based on these</p>
-        </div>
-        
-        <br><br>
-        <div class="footer">
-            <p> that's it :) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://instagram.com/nithiiieeee">insta</a>&nbsp;&nbsp;<a href="https://github.com/nithiiieeee">github</a></p>
-        </div>
+  <p class="intro">
+    This is a small, personal space.
+    A place to collect work, thoughts, and experiments.
+  </p>
 
-        <script src="script.js"></script>
+  <section class="block">
+    <h2>Works</h2>
 
-    </body>
+    <div class="item" data-link="">
+      <h3>Project One</h3>
+      <p>A focused description. What problem it touches. Why it exists.</p>
+    </div>
+
+    <div class="item" data-link="">
+      <h3>Project Two</h3>
+      <p>Something smaller. Maybe unfinished. Still worth showing.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>About</h2>
+
+    <div class="item">
+      <p>
+        I’m Nithin. I like exploring new things whenever I get the chance. I feel I’m at a good stage in life—old enough to value the present, young enough to shape the future. This is my space to share a little about myself.
+
+I’m currently a CA Foundation student with a curiosity for learning and a quiet enthusiasm for life. I enjoy watching anime, movies, and series; coding; playing chess; and capturing and editing moments. I have an appreciation for simple pleasures—the wind, the sunlight (not the harsh midday sun), the ocean, rain, and music. I also enjoy reading storybooks from time to time.
+
+My aim is to become both strong and thoughtful, so I can navigate life confidently and protect those I care about. At the same time, I love taking the time to appreciate the beauty of nature and the world around us.
+      </p>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Connect</h2>
+
+    <div class="links">
+      <a href="https://github.com/nithiiieeee" target="_blank">GitHub</a>
+      <a href="mailto:kdasnithin@gmail.com">Email</a>
+      <a href="https://instagram.com/nithiiieeee" target="_blank">Insta</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026
+  </footer>
+</main>
+
+<script>
+const root = document.documentElement
+const mode = document.getElementById("mode")
+
+if (localStorage.theme === "light") {
+  root.classList.add("light")
+  mode.textContent = "dark"
+}
+
+mode.onclick = () => {
+  root.classList.toggle("light")
+  const isLight = root.classList.contains("light")
+  mode.textContent = isLight ? "dark" : "light"
+  localStorage.theme = isLight ? "light" : "dark"
+}
+
+// Make project items clickable
+document.querySelectorAll('.item[data-link]').forEach(item => {
+  item.style.cursor = 'pointer'; // Show pointer on hover
+  item.addEventListener('click', () => {
+    const url = item.getAttribute('data-link');
+    window.location.href = url;
+  });
+});
+
+</script>
+</body>
 </html>
-
