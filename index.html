@@ -1,71 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nithin Das</title>
-<link href="styles.css" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <title>nithin.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+
 </head>
 <body>
-<main>
-  <header>
-    <div class="name">nithin.</div>
-    <div class="mode" id="mode">light</div>
-  </header>
 
-  <h1>
-    I like building<br>
-    quiet things<br>
-    on the internet.
-  </h1>
+    <div id="desktop-block" style="display:none; color:#fff; font-family:'Quicksand',sans-serif; text-align:center; margin-top:50px; font-size:24px;">
+    Access Denied
+  </div>
 
-  <p class="intro">
-    This is a small, personal space.
-    A place to collect work, thoughts, and experiments.
-  </p>
+  <div id="mobile-content">
+  <h1 class="site-title">nithin</h1>
 
-  <section class="block">
-    <h2>Works</h2>
-
-    <div class="item" data-link="https://nithiiieeee.github.io/ttm">
-      <h3>Talk To Me</h3>
-      <p>Send anonymous messages to me. Kinda my own NGL.</p>
+  <div class="hero-wrapper">
+    <img src="image.png" class="hero">
+    <div class="badge" onclick="togglePalette()"></div>
+    <div class="color-palette" id="palette">
+        <div class="color" data-color="#FF4F00"></div>
+        <div class="color" data-color="#00C2FF"></div>
+        <div class="color" data-color="#7BFF00"></div>
+        <div class="color" data-color="#FF00B8"></div>
+        <div class="color" data-color="#FFD000"></div>
     </div>
-  </section>
-
-  <section class="block">
-    <h2>About</h2>
-
-    <div class="item">
-      <p>
-        I’m Nithin. I like exploring new things whenever I get the chance. I feel I’m at a good stage in life—old enough to value the present, young enough to shape the future. This is my space to share a little about myself.
-
-I’m currently a CA Foundation student with a curiosity for learning and a quiet enthusiasm for life. I enjoy watching anime, movies, and series; coding; playing chess; and capturing and editing moments. I have an appreciation for simple pleasures—the wind, the sunlight (not the harsh midday sun), the ocean, rain, and music. I also enjoy reading storybooks from time to time.
-
-My aim is to become both strong and thoughtful, so I can navigate life confidently and protect those I care about. At the same time, I love taking the time to appreciate the beauty of nature and the world around us.
-      </p>
     </div>
-  </section>
-
-  <section class="block">
-    <h2>Connect</h2>
-
-    <div class="links">
-      <a href="https://github.com/nithiiieeee" target="_blank">GitHub</a>
-      <a href="mailto:kdasnithin@gmail.com">Email</a>
-      <a href="https://instagram.com/nithiiieeee" target="_blank">Insta</a>
+    
+    <p class="description">
+        <i>you only live once</i>
+    </p>
+    
+    <br>
+    <div class="scroll-indicator">
+        <span><b>﹀</b></span>
     </div>
-  </section>
-
-  <footer>
-    © 2026
-  </footer>
-</main>
-
-<script src="script.js"></script>
+    
+    <section class="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <p>
+                Hi, I’m Nithin Das, someone who gets bored easily. So I love trying new things that seem interesting. I’m also someone who values the power of free will and the importance of consistency.
+            </p>
+            <img src="abt.jpg" alt="About image">
+        </div>
+    </section>
+    
+    <section class="works">
+        <h2 class="section-title">My Works</h2>
+        <div class="works-scroll">
+            
+            <a href="https://example.com" target="_blank" class="work-card">
+                <img src="image.png" alt="Work 1">
+                <div class="work-overlay">
+                    <span>Project One</span>
+                    <span class="arrow">&gt;</span>
+                </div>
+            </a>
+            
+        </div>
+    </section>
+    
+    <section class="contact">
+        <h2 class="section-title">Connect with me</h2>
+        <form class="contact-form" onsubmit="sendMail(event)">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="text" id="subject" placeholder="Subject" required>
+            <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        
+        <div class="social-icons">
+            <a href="https://github.com/nithiiieeee" target="_blank">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub">
+            </a>
+            
+            <a href="https://instagram.com/nithiiieeee" target="_blank">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+            </a>
+        </div>
+        
+        <footer class="site-footer">
+            <p>This project stands with Palestine 🇵🇸</p>
+        </footer>
+    </section>
+    </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>
-
